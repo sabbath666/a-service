@@ -1,0 +1,35 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  namespace: elk
+  name: filebeat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: filebeat
+  template:
+    metadata:
+      labels:
+        app: filebeat
+    spec:
+      containers:
+        - name: filebeat
+          image: store/elastic/filebeat:7.6.2
+          volumeMounts:
+            - name: filebeat-conf
+              mountPath: /usr/share/filebeat
+            - name: 'filebeat-logs'
+              mountPath: /opt/logs
+      volumes:
+        - name: 'filebeat-conf'
+          hostPath:
+            path: /home/sabbath/workspace-rancher/a-service/filebeat
+        - name: 'filebeat-logs'
+          hostPath:
+            path: /home/sabbath/workspace-rancher/a-service/logs
+
+
+
+

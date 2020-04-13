@@ -1,0 +1,18 @@
+stages:
+  - name: deploy
+    steps:
+      - applyYamlConfig:
+          path: ./monitoring/elk/elasticsearch-deployment.yaml
+      - applyYamlConfig:
+          path: ./monitoring/elk/kibana-deployment.yaml
+      - applyYamlConfig:
+          path: ./monitoring/elk/logstash-ingest-deployment.yaml
+
+timeout: 30
+#notification:
+#  recipients:
+#    - recipient: s.zadorozhniy@centrinvest.ru
+#      notifier: c-kshgl:n-g7hch
+#  condition:
+#    - Success
+#    - Failed

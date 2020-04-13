@@ -1,0 +1,13 @@
+# This file is where you define your pipelines. You can define multiple.
+# For more information on multiple pipelines, see the documentation:
+#   https://www.elastic.co/guide/en/logstash/current/multiple-pipelines.html
+
+#- pipeline.id: spring
+#  path.config: "/usr/share/logstash/pipeline/spring.conf"
+
+- pipeline.id: echo
+  path.config: "/usr/share/logstash/pipeline/echo.conf"
+
+- pipeline.id: filebeat
+  path.config: "/usr/share/logstash/pipeline/filebeat.conf"
+

@@ -1,0 +1,14 @@
+{
+  "thread": "main",
+  "level": "INFO",
+  "loggerName": "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message": "Tomcat started on port(s): 8081 (http) with context path ''",
+  "endOfBatch": false,
+  "loggerFqcn": "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "instant": {
+    "epochSecond": 1586671526,
+    "nanoOfSecond": 171000000
+  },
+  "threadId": 1,
+  "threadPriority": 5
+}
